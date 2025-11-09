@@ -87,6 +87,7 @@ npm run deploy  # Push /dist to GitHub Pages
 
 ```bash
 git checkout -b gh-pages
+git add dist -f && git commit -m "Deployment commit"
 ```
 
 ### Future deployments:
