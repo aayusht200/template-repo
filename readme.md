@@ -121,7 +121,8 @@ node_modules/
 dist/
 .DS_Store
 package-lock.json
-biome.json
+webpack.dev.js
+webpack.prod.js
 ```
 
 ---
