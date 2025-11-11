@@ -92,7 +92,7 @@ recomended to reset before redeploy
 ```bash
 npm run reset
 ```
-***deletes remote and local gh-pages branch
+***deletes remote and local gh-pages branch***
 
 ---
 
