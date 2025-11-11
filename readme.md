@@ -1,6 +1,6 @@
 # ⚙️ Webpack + Biome Template
 
-A **modern, minimal Webpack boilerplate** for front-end development — preconfigured with **Biome** for formatting and linting, and ready for **GitHub Pages deployment**.
+A **modern, minimal Webpack boilerplate** for front-end development — preconfigured with **Biome** for formatting and linting, and ready for **GitHub Pages deployment** using automated npm scripts.
 
 ---
 
@@ -40,8 +40,8 @@ npm run setup
 npm start
 ```
 
-- Runs Webpack Dev Server with live reload.
-- Default mode: development with `eval-source-map`.
+* Runs Webpack Dev Server with live reload.
+* Default mode: development with `eval-source-map`.
 
 ---
 
@@ -51,7 +51,7 @@ npm start
 npm run build
 ```
 
-- Creates an optimized, minified build in `/dist`.
+* Creates an optimized, minified build in `/dist`.
 
 ---
 
@@ -63,52 +63,52 @@ npm run lint-format
 
 Biome automatically:
 
-- ✅ Auto-sorts imports  
-- ✅ Enforces linting and code quality  
-- ✅ Maintains consistent formatting across JS, CSS, and HTML  
+* ✅ Auto-sorts imports
+* ✅ Enforces linting and code quality
+* ✅ Maintains consistent formatting across JS, CSS, and HTML
 
 ---
 
 ### 5️⃣ Deploy to GitHub Pages
 
-#### 🔹 First-Time Deployment (Automated)
-
-Option 1: Manual first-time deploy:
-
-```bash
-git checkout main
-npm run build
-git subtree push --prefix dist origin gh-pages --force
-```
-
-Option 2: One-command first deploy using `package.json` script:
+#### 🔹 First-Time Deployment
 
 ```bash
 npm run first-deploy
 ```
 
-> **`first-deploy` script workflow:**
-> 1. Builds `/dist`  
-> 2. Temporarily commits `/dist`  
-> 3. Pushes to `gh-pages`  
-> 4. Resets main branch and cleans `/dist`  
+**Workflow:**
 
-#### 🔹 Future Deployments
+1. Creates the `gh-pages` branch if it doesn’t exist.
+2. Merges `main` into `gh-pages`.
+3. Builds `/dist` and commits it temporarily.
+4. Pushes `/dist` subtree to `gh-pages`.
+5. Returns to `main` and removes `/dist`.
 
-After making changes:
+---
+
+#### 🔹 Redeploy / Future Updates
 
 ```bash
-npm run deploy
+npm run redeploy
 ```
 
-- Pushes `/dist` to `gh-pages`.  
-- Keeps main branch clean.  
+**Workflow:**
+
+1. Switch to `gh-pages` branch and merge `main`.
+2. Build `/dist` and commit temporarily.
+3. Push `/dist` subtree to `gh-pages`.
+4. Return to `main` and remove `/dist`.
+
+> Both scripts keep your main branch clean while updating the deployed site.
+
+---
 
 #### 🔹 Enable GitHub Pages
 
-1. Go to **Settings → Pages** in your GitHub repository.  
-2. Source: **Deploy from branch**  
-3. Branch: `gh-pages`, Folder: `/ (root)`  
+1. Go to **Settings → Pages** in your GitHub repository.
+2. Source: **Deploy from branch**
+3. Branch: `gh-pages`, Folder: `/ (root)`
 4. Save — your site will be live in a few minutes. 🎉
 
 ---
@@ -141,8 +141,8 @@ webpack.prod.js
 
 ## 🧰 Notes
 
-- Supports **development** and **production** environments.  
-- Uses **ESM imports** (`import/export` syntax).  
-- Automatically cleans `dist/` on each build.  
-- Biome ensures code consistency and speed in place of Prettier + ESLint.  
-- **Deployment workflow is automated** — first deploy and future deploys handled via npm scripts.
+* Supports **development** and **production** environments.
+* Uses **ESM imports** (`import/export` syntax).
+* Automatically cleans `dist/` on each build.
+* Biome ensures code consistency and speed in place of Prettier + ESLint.
+* **Deployment workflow is fully automated** — first deploy and redeploy handled via npm scripts.
