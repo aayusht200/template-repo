@@ -87,10 +87,10 @@ npm run first-deploy
 
 ---
 
-#### 🔹 Redeploy / Future Updates
+#### 🔹 reset gh-pages 
 
 ```bash
-npm run redeploy
+npm run reset
 ```
 
 **Workflow:**
