@@ -71,12 +71,12 @@ Biome automatically:
 
 ### 5️⃣ Deploy to GitHub Pages
 
-#### 🔹 First-Time Deployment
+#### 🔹Deployment
 
 ```bash
-npm run first-deploy
+npm run deploy
 ```
-
+recomended to reset before redeploy
 **Workflow:**
 
 1. Creates the `gh-pages` branch if it doesn’t exist.
