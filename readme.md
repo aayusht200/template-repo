@@ -87,20 +87,12 @@ recomended to reset before redeploy
 
 ---
 
-#### 🔹 reset gh-pages 
+#### 🔹 Reset gh-pages branch
 
 ```bash
 npm run reset
 ```
-
-**Workflow:**
-
-1. Switch to `gh-pages` branch and merge `main`.
-2. Build `/dist` and commit temporarily.
-3. Push `/dist` subtree to `gh-pages`.
-4. Return to `main` and remove `/dist`.
-
-> Both scripts keep your main branch clean while updating the deployed site.
+***deletes remote and local gh-pages branch
 
 ---
 
